@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import random
+from tqdm import tqdm
 
 # inputs for customization
 while True:
@@ -45,7 +45,8 @@ max_change = 0.02
 
 # simulate for x amount of days
 if daysamount != 1:
-	for day in range(2, daysamount+1):
+	for day in tqdm(range(1, daysamount+1)):
+		if day == 1: continue
 		percentage_change = random.uniform(0, max_change)
 	
 		# 50% chance to flip the number to a negative number
